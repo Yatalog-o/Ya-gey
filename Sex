@@ -1,0 +1,125 @@
+local Library = loadstring(game:HttpGetAsync("https://github.com/ActualMasterOogway/Fluent-Renewed/releases/latest/download/Fluent.luau"))()
+local SaveManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ActualMasterOogway/Fluent-Renewed/master/Addons/SaveManager.luau"))()
+local InterfaceManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ActualMasterOogway/Fluent-Renewed/master/Addons/InterfaceManager.luau"))()
+ 
+local Window = Library:CreateWindow{
+    Title = "ЫЫЫЫЫЫЫЫЫ",
+    SubTitle = "By Аршак",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(830, 525),
+    Resize = true, -- Resize this ^ Size according to a 1920x1080 screen, good for mobile users but may look weird on some devices
+    MinSize = Vector2.new(470, 380),
+    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.RightControl -- Used when theres no MinimizeKeybind
+}
+
+-- Fluent Renewed provides ALL 1544 Lucide 0.469.0 https://lucide.dev/icons/ Icons and ALL 9072 Phosphor 2.1.0 https://phosphoricons.com/ Icons for the tabs, icons are optional
+local Tabs = {
+    Main = Window:CreateTab{
+        Title = "Главная",
+        Icon = "phosphor-users-bold"
+    },
+    Settings = Window:CreateTab{
+        Title = "Фарма",
+        Icon = "settings"
+    }
+}
+
+local Options = Library.Options
+Tabs.Main:CreateButton{
+    Title = "Скупка растений",
+    Description = "Я гидросексуал",
+    Callback = function()
+        
+                while wait() do
+local args = {
+    [1] = {
+        [1] = "Tomatrio Seed",
+        [2] = "\8"
+    }
+}
+
+game:GetService("ReplicatedStorage").BridgeNet2.dataRemoteEvent:FireServer(unpack(args))
+local args = {
+    [1] = {
+        [1] = "Cocotank Seed",
+        [2] = "\8"
+    }
+}
+
+game:GetService("ReplicatedStorage").BridgeNet2.dataRemoteEvent:FireServer(unpack(args))
+local args = {
+    [1] = {
+        [1] = "Carnivorous Plant Seed",
+        [2] = "\8"
+    }
+}
+
+game:GetService("ReplicatedStorage").BridgeNet2.dataRemoteEvent:FireServer(unpack(args))
+local args = {
+    [1] = {
+        [1] = "Mr Carrot Seed",
+        [2] = "\8"
+    }
+}
+
+game:GetService("ReplicatedStorage").BridgeNet2.dataRemoteEvent:FireServer(unpack(args))
+local args = {
+    [1] = {
+        [1] = "Watermelon Seed",
+        [2] = "\8"
+    }
+}
+end
+            
+        
+    end
+}
+Tabs.Main:CreateButton{
+    Title = "Скупка поливалки и гранат",
+    Description = "Я гидросексуал",
+    Callback = function()
+while wait() do
+game:GetService("ReplicatedStorage").BridgeNet2.dataRemoteEvent:FireServer(unpack(args))
+local args = {
+    [1] = {
+        [1] = "Water Bucket",
+        [2] = "\26"
+    }
+}
+
+game:GetService("ReplicatedStorage").BridgeNet2.dataRemoteEvent:FireServer(unpack(args))
+local args = {
+    [1] = {
+        [1] = "Frost Grenade",
+        [2] = "\26"
+    }
+}
+
+game:GetService("ReplicatedStorage").BridgeNet2.dataRemoteEvent:FireServer(unpack(args))
+end
+end}
+Tabs.Main:CreateButton{
+    Title = "Продать всех брейнротов в рабство",
+    Description = "Я гидросексуал",
+    Callback = function()
+game:GetService("ReplicatedStorage").Remotes.ItemSell:FireServer() 
+end}
+local Slider = Tabs.Main:CreateSlider("Slider", {
+    Title = "Slider",
+    Description = "Перетягивай",
+    Default = 2,
+    Min = 0,
+    Max = 1000,
+    Rounding = 1,
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end
+})
+
+Slider:OnChanged(function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+end)
+
+Slider:SetValue(30)
