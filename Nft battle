@@ -1,0 +1,19 @@
+while wait() do local args = {
+    [1] = "Oligarch",
+    [2] = 10
+}
+
+game:GetService("ReplicatedStorage").Events.OpenCase:InvokeServer(unpack(args))
+local args = {
+    [1] = "Sell",
+    [2] = "ALL"
+}
+
+game:GetService("ReplicatedStorage").Events.Inventory:FireServer(unpack(args)) local args = {
+    [1] = "Trash",
+    [2] = 10
+}
+
+game:GetService("ReplicatedStorage").Events.OpenCase:InvokeServer(unpack(args))
+
+end
